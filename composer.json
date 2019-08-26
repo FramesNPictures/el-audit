@@ -1,0 +1,23 @@
+{
+    "name": "framesnpictures/laravel-audit",
+    "description": "Laravel Audit Module",
+    "type": "library",
+    "require": {
+        "framesnpictures/laravel-module": "dev-develop",
+        "framesnpictures/dto": "^0.5.7"
+    },
+    "authors": [
+        {
+            "name": "Chris Cynarski",
+            "email": "krzysztof@cynarski.net"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fnp\\Audit\\": "src/"
+        }
+    }
+}
