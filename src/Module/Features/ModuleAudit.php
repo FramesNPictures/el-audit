@@ -1,6 +1,6 @@
 <?php
 
-namespace Fnp\Module\Features;
+namespace Fnp\Audit\Module\Features;
 
 use Fnp\Audit\Services\AuditService;
 
