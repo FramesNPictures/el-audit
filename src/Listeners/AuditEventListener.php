@@ -16,11 +16,12 @@ class AuditEventListener
     /**
      * Default handler for Subscribed Events
      *
+     * @param             $eventName
      * @param object|null $event
      *
      * @throws \ReflectionException
      */
-    public function handle($event = NULL)
+    public function handle($eventName, $event = NULL)
     {
         if (is_array($event))
             $event = $event[0];
