@@ -4,7 +4,8 @@
     "type": "library",
     "require": {
         "framesnpictures/laravel-module": "dev-develop",
-        "framesnpictures/dto": "^0.5.7"
+        "framesnpictures/dto": "^0.5.7",
+        "nesbot/carbon": "^2.24"
     },
     "authors": [
         {
