@@ -7,28 +7,12 @@ use Fnp\Audit\Events\NewAuditEntry;
 use Fnp\Audit\Registry\AuditEventRegistry;
 use Fnp\Dto\Common\Flags\DtoToArrayFlags;
 use Fnp\Dto\Common\Helper\Iof;
-use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use ReflectionClass;
 use ReflectionProperty;
 
 class AuditEventListener
 {
-    /**
-     * @var Request
-     */
-    protected $request;
-
-    /**
-     * Create the event listener.
-     *
-     * @param Request $request
-     */
-    public function __construct(Request $request)
-    {
-        $this->request = $request;
-    }
-
     /**
      * Default handler for Subscribed Events
      *
