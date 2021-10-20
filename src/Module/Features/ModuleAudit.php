@@ -2,20 +2,22 @@
 
 namespace Fnp\Audit\Module\Features;
 
-use Fnp\Audit\Services\AuditService;
+use Fnp\Audit\Listeners\AuditEventListener;
+use Illuminate\Events\Dispatcher;
 
 trait ModuleAudit
 {
     /**
-     * Return array of handles and event classes to be audited.
-     * Audit handle as a key and event class as a value.
+     * Return array of Event classes to be audited.
+     *
      * @return array
      */
-    abstract public function auditEvents(): array;
+    abstract public function defineEventsToBeAudited(): array;
 
-    public function bootModuleAuditFeature()
+    public function bootModuleAuditFeature(Dispatcher $events)
     {
-        foreach ($this->auditEvents() as $handle => $event)
-            AuditService::audit($event, $handle);
+        foreach ($this->defineEventsToBeAudited() as $event) {
+            $events->listen($event, AuditEventListener::class);
+        }
     }
 }

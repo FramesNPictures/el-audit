@@ -5,9 +5,16 @@ namespace Fnp\Audit\Contracts;
 interface Auditable
 {
     /**
-     * Return a payload to be attached to the
-     * audit event.
+     * Returns the audit event name.
+     *
+     * @return string
+     */
+    public function getAuditHandle(): string;
+
+    /**
+     * Returns a payload to be attached to the audit event.
+     *
      * @return array
      */
-    public function auditPayload(): array;
+    public function getAuditPayload(): array;
 }

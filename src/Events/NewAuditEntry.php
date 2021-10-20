@@ -22,7 +22,7 @@ class NewAuditEntry
      */
     public $eventTime;
 
-    public function __construct(string $handle, Collection $payload)
+    public function __construct(string $handle, array $payload)
     {
         $this->eventTime = Carbon::now();
         $this->handle    = $handle;
